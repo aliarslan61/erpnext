@@ -51,6 +51,7 @@ def get_product_data(search=None, start=0, limit=12):
 	if search:
 		query += """ and (item_name like %(search)s
 				or web_item_name like %(search)s
+    			or item_code like %(search)s
 				or brand like %(search)s
 				or web_long_description like %(search)s)"""
 		search = "%" + cstr(search) + "%"

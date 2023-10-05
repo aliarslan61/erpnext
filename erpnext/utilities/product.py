@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.utils import cint, flt, fmt_money, getdate, nowdate
-
+from frappe import _
 from erpnext.accounts.doctype.pricing_rule.pricing_rule import get_pricing_rule_for_item
 from erpnext.stock.doctype.batch.batch import get_batch_qty
 
@@ -81,7 +81,7 @@ def get_price(item_code, price_list, customer_group, company, qty=1):
 	from erpnext.e_commerce.shopping_cart.cart import get_party
 
 	template_item_code = frappe.db.get_value("Item", item_code, "variant_of")
-
+	# price_obj = {}
 	if price_list:
 		price = frappe.get_all(
 			"Item Price",
@@ -174,8 +174,25 @@ def get_price(item_code, price_list, customer_group, company, qty=1):
 
 				if not price_obj["formatted_price"]:
 					price_obj["formatted_price"], price_obj["formatted_mrp"] = "", ""
+     
+				# customer_billing_currency = None
+				# party = get_party()
+				# if party and party.doctype == "Customer":
+				# 	customer_billing_currency = frappe.db.get_value("Customer", party.name, "default_currency")
+
+				# # If the customer's billing currency is different from the pricelist currency, get conversion rate and convert price
+				# if customer_billing_currency and price_obj["currency"] != customer_billing_currency:
+				# 	conversion_rate = frappe.db.get_value("Currency Exchange", {"from_currency": price_obj["currency"], "to_currency": customer_billing_currency}, "exchange_rate")
+
+				# 	if not conversion_rate:
+				# 		frappe.throw(_("No exchange rate found for {0} to {1}").format(price_obj["currency"], customer_billing_currency))
+				# 	# Convert price_list_rate to the desired currency
+				# 	price_obj["price_list_rate"] = flt(price_obj["price_list_rate"] * conversion_rate)
+				# 	price_obj["currency"] = customer_billing_currency
+				# 	price_obj["formatted_price"] = fmt_money(price_obj["price_list_rate"], currency=price_obj["currency"])
 
 			return price_obj
+
 
 
 def get_non_stock_item_status(item_code, item_warehouse_field):

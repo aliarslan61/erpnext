@@ -11,7 +11,7 @@
 			<table class="table w-100">
 				<tr>
 					{% set total_items = frappe.utils.cstr(frappe.utils.flt(doc.total_qty, 0)) %}
-					<td class="bill-label">{{ _("Net Total (") + total_items + _(" Items)") }}</td>
+					<td class="bill-label">{{ _("Total (") + total_items + _(" Ürün)") }}</td>
 					<td class="bill-content net-total text-right">{{ doc.get_formatted("net_total") }}</td>
 				</tr>
 
@@ -58,7 +58,7 @@
 			</button>
 		{% else %}
 			<button class="btn btn-primary btn-request-for-quotation font-md w-100" type="button">
-				{{ _('Request for Quote') }}
+				{{ _('Teklifi onayla') }}
 			</button>
 		{% endif %}
 	</div>

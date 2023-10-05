@@ -166,13 +166,13 @@ erpnext.ProductView =  class {
 			paging_html += `
 				<button class="btn btn-default btn-prev" data-start="${ start - page_length }"
 					style="float: left" ${prev_disable}>
-					${ __("Prev") }
+					${ __("Geri") }
 				</button>`;
 
 			paging_html += `
 				<button class="btn btn-default btn-next" data-start="${ start + page_length }"
 					${next_disable}>
-					${ __("Next") }
+					${ __("İleri") }
 				</button>
 			`;
 
@@ -188,7 +188,7 @@ erpnext.ProductView =  class {
 			<div class="input-group col-8 p-0">
 				<div class="dropdown w-100" id="dropdownMenuSearch">
 					<input type="search" name="query" id="search-box" class="form-control font-md"
-						placeholder="Search for Products"
+						placeholder="Ürün bul"
 						aria-label="Product" aria-describedby="button-addon2">
 					<div class="search-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"

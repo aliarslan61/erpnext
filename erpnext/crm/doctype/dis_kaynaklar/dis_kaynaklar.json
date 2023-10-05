@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-08-30 21:35:26.883240",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "form_id",
+  "contact",
+  "page_url",
+  "remote_ip",
+  "e_mail",
+  "tel",
+  "ilname",
+  "ilcename",
+  "mesaj",
+  "iys_onay",
+  "onay_2",
+  "kvkk_onay",
+  "datetime"
+ ],
+ "fields": [
+  {
+   "fieldname": "form_id",
+   "fieldtype": "Data",
+   "label": "Form Adi"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Ad Soyad"
+  },
+  {
+   "fieldname": "page_url",
+   "fieldtype": "Data",
+   "label": "Kaynak URL"
+  },
+  {
+   "fieldname": "remote_ip",
+   "fieldtype": "Data",
+   "label": "Kullan\u0131c\u0131 IP Adresi"
+  },
+  {
+   "fieldname": "e_mail",
+   "fieldtype": "Data",
+   "label": "E-Mail"
+  },
+  {
+   "fieldname": "tel",
+   "fieldtype": "Data",
+   "label": "Telefon"
+  },
+  {
+   "fieldname": "ilname",
+   "fieldtype": "Data",
+   "label": "\u015eehir"
+  },
+  {
+   "fieldname": "ilcename",
+   "fieldtype": "Data",
+   "label": "\u0130l\u00e7e"
+  },
+  {
+   "fieldname": "mesaj",
+   "fieldtype": "Small Text",
+   "label": "Mesaj"
+  },
+  {
+   "default": "0",
+   "fieldname": "iys_onay",
+   "fieldtype": "Check",
+   "label": "IYS onay"
+  },
+  {
+   "default": "0",
+   "fieldname": "onay_2",
+   "fieldtype": "Check",
+   "label": "Reklam onay"
+  },
+  {
+   "default": "0",
+   "fieldname": "kvkk_onay",
+   "fieldtype": "Check",
+   "label": "KVKK onay"
+  },
+  {
+   "fieldname": "datetime",
+   "fieldtype": "Datetime",
+   "label": "Tarih ve saat"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-30 21:40:25.261846",
+ "modified_by": "Administrator",
+ "module": "CRM",
+ "name": "Dis Kaynaklar",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

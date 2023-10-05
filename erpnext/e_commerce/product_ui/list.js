@@ -19,21 +19,20 @@ erpnext.ProductList = class {
 	make() {
 		let me = this;
 		let html = `<br><br>`;
-
+	
 		this.items.forEach(item => {
 			let title = item.web_item_name || item.item_name || item.item_code || "";
-			title =  title.length > 200 ? title.substr(0, 200) + "..." : title;
-
+			title = title.length > 200 ? title.substr(0, 200) + "..." : title;
+	
 			html += `<div class='row list-row w-100 mb-4'>`;
 			html += me.get_image_html(item, title, me.settings);
 			html += me.get_row_body_html(item, title, me.settings);
 			html += `</div>`;
 		});
-
+	
 		let $product_wrapper = this.products_section;
 		$product_wrapper.append(html);
 	}
-
 	get_image_html(item, title, settings) {
 		let image = item.website_image;
 		let wishlist_enabled = !item.has_variants && settings.enable_wishlist;
@@ -99,7 +98,7 @@ erpnext.ProductList = class {
 	get_item_details(item, settings) {
 		let details = `
 			<p class="product-code">
-				${ item.item_group } | Item Code : ${ item.item_code }
+				${ item.item_group } | Ürün Kodu : ${ item.item_code }
 			</p>
 			<div class="mt-2" style="color: var(--gray-600) !important; font-size: 13px;">
 				${ item.short_description || '' }
@@ -137,7 +136,7 @@ erpnext.ProductList = class {
 			} else if (!item.in_stock) {
 				return `
 					<br>
-					<span class="out-of-stock mt-2">${ __("Out of stock") }</span>
+					<span class="out-of-stock mt-2">${ __("Tükendi") }</span>
 				`;
 			}
 		}
@@ -179,7 +178,7 @@ erpnext.ProductList = class {
 							<use href="#icon-assets"></use>
 						</svg>
 					</span>
-					${ settings.enable_checkout ? __('Add to Cart') :  __('Add to Quote') }
+					${ settings.enable_checkout ? __('Sepete ekle') :  __('Teklife ekle') }
 				</div>
 
 				<div class="cart-indicator list-indicator ${item.in_cart ? '' : 'hidden'}">
@@ -193,7 +192,7 @@ erpnext.ProductList = class {
 						${ item.in_cart ? '' : 'hidden' }"
 						data-item-code="${ item.item_code }"
 						style="padding: 0.25rem 1rem; min-width: 135px;">
-						${ settings.enable_checkout ? __('Go to Cart') :  __('Go to Quote') }
+						${ settings.enable_checkout ? __('Sepete git') :  __('Teklife git') }
 					</div>
 				</a>
 			`;

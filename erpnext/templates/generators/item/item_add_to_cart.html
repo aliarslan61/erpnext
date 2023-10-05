@@ -43,7 +43,7 @@
 				</span>
 			{% elif product_info.in_stock == 0 %}
 				<span class="no-stock out-of-stock">
-					{{ _('Out of stock') }}
+					{{ _('Tükendi') }}
 				</span>
 			{% elif product_info.in_stock == 1 %}
 				<span class="in-green has-stock">
@@ -90,10 +90,10 @@
 			</div>
 		{% endif %}
 
-		<!-- Add to Cart / View in Cart, Contact Us -->
+		<!-- Sepete ekle / View in Cart, Contact Us -->
 		<div class="mt-6 mb-5">
 			<div class="mb-4 d-flex">
-				<!-- Add to Cart -->
+				<!-- Sepete ekle -->
 				{% if product_info.price and (cart_settings.allow_items_not_in_stock or product_info.in_stock) %}
 					<a href="/cart" class="btn btn-light btn-view-in-cart hidden mr-2 font-md"
 						role="button">
@@ -108,7 +108,7 @@
 								<use href="#icon-assets"></use>
 							</svg>
 						</span>
-						{{ _("Add to Cart") if cart_settings.enable_checkout else  _("Add to Quote") }}
+						{{ _("Sepete ekle") if cart_settings.enable_checkout else  _("Teklife ekle") }}
 					</button>
 				{% endif %}
 
@@ -124,7 +124,7 @@
 <script>
 	frappe.ready(() => {
 		$('.page_content').on('click', '.btn-add-to-cart', (e) => {
-			// Bind action on add to cart button
+			// Bind action on Sepete ekle button
 			const $btn = $(e.currentTarget);
 			$btn.prop('disabled', true);
 			const item_code = $btn.data('item-code');
